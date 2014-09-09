@@ -3,7 +3,7 @@ Created on 08.09.2014
 
 @author: Tino Miegel (t.miegel@conterra.de)
 '''
-import fmeobjects, zlib, array, cStringIO, os, fme, re
+import fmeobjects, zlib, array, cStringIO, fme
 import colors
 
 def readU8(f):
@@ -43,14 +43,17 @@ unknown_node_ids = []
 
 apps = {}
 
+pc = fme.macroValues['pc'] == "Yes"
+
 def buildApps():
-    lib = fmeobjects.FMELibrary()    
-    for c in colors.colors.keys():   
-        a = fmeobjects.FMEAppearance()
-        a.setName(unicode(c))
-        a.setColorAmbient(float(colors.colors[c][0]) / 255, float(colors.colors[c][1]) / 255, float(colors.colors[c][2]) / 255)
-        key = lib.addAppearance(a)
-        apps[c] = key
+    if not pc:
+        lib = fmeobjects.FMELibrary()    
+        for c in colors.colors.keys():   
+            a = fmeobjects.FMEAppearance()
+            a.setName(unicode(c))
+            a.setColorAmbient(float(colors.colors[c][0]) / 255, float(colors.colors[c][1]) / 255, float(colors.colors[c][2]) / 255)
+            key = lib.addAppearance(a)
+            apps[c] = key
 
 # Template Class Interface:
 class FeatureProcessor(object):
@@ -124,13 +127,25 @@ class FeatureProcessor(object):
                         pass
                     else:
                         f = fmeobjects.FMEFeature()
-                        box = fmeobjects.FMEBox((x * 16 + i, y * 16 + j, z * 16 + k, x * 16 + i + 1, y * 16 + j + 1, z * 16 + k + 1))
-                        f.setAttribute("content", content)
-                        try:
-                            box.setAppearanceReference (apps[content], True)
-                        except KeyError:
-                            fmeobjects.FMELogFile().logMessageString(content, fmeobjects.FME_WARN)
-                        f.setGeometry(box)
+                        if pc:
+                            geom = fmeobjects.FMEPoint(x * 16 + i, y * 16 + j, z * 16 + k)
+                            try:
+                                #lib = fmeobjects.FMELibrary()
+                                #col = lib.getAppearanceCopy(apps[content]).getColorAmbient()
+                                #fmeobjects.FMELogFile().logMessageString("color : %i,%i,%i"%(float(col[0])*255,float(col[0])*255,float(col[0])*255), fmeobjects.FME_WARN)
+                                f.setAttribute("color_red", "%i"%colors.colors[content][0])
+                                f.setAttribute("color_blue", "%i"%colors.colors[content][2])
+                                f.setAttribute("color_green", "%i"%colors.colors[content][1])
+                            except:
+                                fmeobjects.FMELogFile().logMessageString("No color mapping for %s"%content, fmeobjects.FME_WARN)
+                        else:
+                            geom = fmeobjects.FMEBox((x * 16 + i, y * 16 + j, z * 16 + k, x * 16 + i + 1, y * 16 + j + 1, z * 16 + k + 1))
+                            try:
+                                geom.setAppearanceReference (apps[content], True)
+                            except KeyError:
+                                fmeobjects.FMELogFile().logMessageString(content, fmeobjects.FME_WARN)
+                        f.setAttribute("content", content)    
+                        f.setGeometry(geom)
                         f.setAttribute("pos",feature.getAttribute("pos"))
                         self.pyoutput(f)
                       

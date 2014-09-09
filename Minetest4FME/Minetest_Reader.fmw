@@ -7,18 +7,19 @@
 #    
 #    C:\FME15_x64\fme.exe C:\data\git\Minetest4FME\Minetest4FME\Minetest_Reader.fmw
 #          --sqlite C:\bin\minetest-0.4.10-win64\worlds\Small\map.sqlite
+#          --pc Yes
 #    
 #    
 #! END_PYTHON=""
 #! FME_BUILD_NUM="15168"
 #! BEGIN_TCL=""
-#! LAST_SAVE_DATE="2014-09-09T09:48:10"
+#! LAST_SAVE_DATE="2014-09-09T10:48:33"
 #! MAX_LOG_FEATURES="200"
 #! ATTR_TYPE_ENCODING="SDF"
 #! DESTINATION_ROUTING_FILE=""
 #! TITLE=""
 #! FME_REPROJECTION_ENGINE="FME"
-#! DOC_EXTENTS="1593.98 71"
+#! DOC_EXTENTS="2796.99 626.005"
 #! SHOW_ANNOTATIONS="true"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! SOURCE="NONE"
@@ -48,7 +49,7 @@
 #! FME_GEOMETRY_HANDLING="Enhanced"
 #! LOG_MAX_PRECISION="No"
 #! FME_STROKE_MAX_DEVIATION="0"
-#! DOC_TOP_LEFT="-1784 450.003"
+#! DOC_TOP_LEFT="-1532 -570.007"
 #! PASSWORD=""
 #! WORKSPACE_VERSION="1"
 #! >
@@ -317,8 +318,8 @@
 #! IS_EDITABLE="false"
 #! IDENTIFIER="1"
 #! FEAT_GEOMTYPE="db_none"
-#! POSITION="-1784 521.003"
-#! BOUNDING_RECT="-1784 521.003 0 0"
+#! POSITION="-1532 55.9983"
+#! BOUNDING_RECT="-1532 55.9983 0 0"
 #! ORDER="5e+014"
 #! COLLAPSED="false"
 #! KEYWORD="SQLITE3_1"
@@ -346,8 +347,13 @@
 #! IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE_OR_ATTR pc Yes%No Read as PointCloud:"
+#! DEFAULT_VALUE="Yes"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
 #! GUI_LINE="GUI OPTIONAL IGNORE TEXT_EDIT_PYTHON_PARM player_pos Python Script:"
-#! DEFAULT_VALUE="import&lt;space&gt;re&lt;comma&gt;fme&lt;comma&gt;os&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;int64&lt;openparen&gt;u&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;while&lt;space&gt;u&lt;space&gt;&lt;gt&gt;=&lt;space&gt;2**63:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;u&lt;space&gt;-=&lt;space&gt;2**64&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;while&lt;space&gt;u&lt;space&gt;&lt;lt&gt;=&lt;space&gt;-2**63:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;u&lt;space&gt;+=&lt;space&gt;2**64&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;u&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;getBlockAsInteger&lt;openparen&gt;p&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;int64&lt;openparen&gt;p&lt;openbracket&gt;2&lt;closebracket&gt;*16777216&lt;space&gt;+&lt;space&gt;p&lt;openbracket&gt;1&lt;closebracket&gt;*4096&lt;space&gt;+&lt;space&gt;p&lt;openbracket&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;s&lt;space&gt;=&lt;space&gt;re.compile&lt;openparen&gt;&lt;quote&gt;position&lt;backslash&gt;s=&lt;backslash&gt;s&lt;backslash&gt;&lt;openparen&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;comma&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;comma&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;backslash&gt;&lt;closeparen&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;with&lt;space&gt;open&lt;openparen&gt;os.path.join&lt;openparen&gt;os.path.dirname&lt;openparen&gt;fme.macroValues&lt;openbracket&gt;&lt;apos&gt;sqlite&lt;apos&gt;&lt;closebracket&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;players&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;singleplayer&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;r&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;playerfile:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;line&lt;space&gt;in&lt;space&gt;playerfile:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;res&lt;space&gt;=&lt;space&gt;s.match&lt;openparen&gt;line&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;res:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_x&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;1&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_y&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;2&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_z&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;3&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;blocks&lt;space&gt;=&lt;space&gt;&lt;openbracket&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_x-1&lt;comma&gt;player_x+1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;j&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_z-1&lt;comma&gt;player_z+1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;k&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_y&lt;comma&gt;player_y+2&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;blocks.append&lt;openparen&gt;str&lt;openparen&gt;getBlockAsInteger&lt;openparen&gt;&lt;openbracket&gt;i&lt;comma&gt;k&lt;comma&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;a&lt;space&gt;=&lt;space&gt;&lt;quote&gt;pos&lt;space&gt;in&lt;space&gt;&lt;openparen&gt;%s&lt;closeparen&gt;&lt;quote&gt;&lt;space&gt;%&lt;space&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;.join&lt;openparen&gt;blocks&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;a&lt;lf&gt;&lt;lf&gt;"
+#! DEFAULT_VALUE="import&lt;space&gt;re&lt;comma&gt;fme&lt;comma&gt;os&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;int64&lt;openparen&gt;u&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;while&lt;space&gt;u&lt;space&gt;&lt;gt&gt;=&lt;space&gt;2**63:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;u&lt;space&gt;-=&lt;space&gt;2**64&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;while&lt;space&gt;u&lt;space&gt;&lt;lt&gt;=&lt;space&gt;-2**63:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;u&lt;space&gt;+=&lt;space&gt;2**64&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;u&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;getBlockAsInteger&lt;openparen&gt;p&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;int64&lt;openparen&gt;p&lt;openbracket&gt;2&lt;closebracket&gt;*16777216&lt;space&gt;+&lt;space&gt;p&lt;openbracket&gt;1&lt;closebracket&gt;*4096&lt;space&gt;+&lt;space&gt;p&lt;openbracket&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;s&lt;space&gt;=&lt;space&gt;re.compile&lt;openparen&gt;&lt;quote&gt;position&lt;backslash&gt;s=&lt;backslash&gt;s&lt;backslash&gt;&lt;openparen&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;comma&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;comma&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;backslash&gt;&lt;closeparen&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;with&lt;space&gt;open&lt;openparen&gt;os.path.join&lt;openparen&gt;os.path.dirname&lt;openparen&gt;fme.macroValues&lt;openbracket&gt;&lt;apos&gt;sqlite&lt;apos&gt;&lt;closebracket&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;players&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;singleplayer&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;r&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;playerfile:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;line&lt;space&gt;in&lt;space&gt;playerfile:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;res&lt;space&gt;=&lt;space&gt;s.match&lt;openparen&gt;line&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;res:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_x&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;1&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_y&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;2&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;player_z&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;float&lt;openparen&gt;res.group&lt;openparen&gt;3&lt;closeparen&gt;&lt;closeparen&gt;&lt;solidus&gt;10.0&lt;closeparen&gt;&lt;solidus&gt;16&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;blocks&lt;space&gt;=&lt;space&gt;&lt;openbracket&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;FME_MacroValues&lt;openbracket&gt;&lt;apos&gt;pc&lt;apos&gt;&lt;closebracket&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;No&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_x-1&lt;comma&gt;player_x+1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;j&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_z-1&lt;comma&gt;player_z+1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;k&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_y&lt;comma&gt;player_y+2&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;blocks.append&lt;openparen&gt;str&lt;openparen&gt;getBlockAsInteger&lt;openparen&gt;&lt;openbracket&gt;i&lt;comma&gt;k&lt;comma&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_x-6&lt;comma&gt;player_x+6&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;j&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_z-6&lt;comma&gt;player_z+6&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;k&lt;space&gt;in&lt;space&gt;xrange&lt;openparen&gt;player_y-2&lt;comma&gt;player_y+2&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;blocks.append&lt;openparen&gt;str&lt;openparen&gt;getBlockAsInteger&lt;openparen&gt;&lt;openbracket&gt;i&lt;comma&gt;k&lt;comma&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;a&lt;space&gt;=&lt;space&gt;&lt;quote&gt;pos&lt;space&gt;in&lt;space&gt;&lt;openparen&gt;%s&lt;closeparen&gt;&lt;quote&gt;&lt;space&gt;%&lt;space&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;.join&lt;openparen&gt;blocks&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;a&lt;lf&gt;&lt;lf&gt;"
 #! IS_STAND_ALONE="true"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -362,8 +368,8 @@
 #! IDENTIFIER="2"
 #! TYPE="PythonCaller"
 #! VERSION="4"
-#! POSITION="-994.003 521.003"
-#! BOUNDING_RECT="-994.003 521.003 430 71"
+#! POSITION="-835.001 -127.003"
+#! BOUNDING_RECT="-835.001 -127.003 430 71"
 #! ORDER="5e+014"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
@@ -373,8 +379,11 @@
 #! <XFORM_ATTR ATTR_NAME="pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_red" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_blue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_green" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="content"/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="content pos color_red color_blue color_green"/>
 #! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
@@ -387,8 +396,8 @@
 #! IDENTIFIER="18"
 #! TYPE="Inspector"
 #! VERSION="3"
-#! POSITION="-190.02 521.003"
-#! BOUNDING_RECT="-190.02 521.003 0 0"
+#! POSITION="1264.99 -133.004"
+#! BOUNDING_RECT="1264.99 -133.004 0 0"
 #! ORDER="5e+014"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
@@ -406,9 +415,79 @@
 #! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
 #! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
 #! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_3_Output"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Map"/>
 #! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="PointCloudCombiner"
+#! VERSION="2"
+#! POSITION="715.507 -499.007"
+#! BOUNDING_RECT="715.507 -499.007 430 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_red" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_blue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_green" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SPACING" PARM_VALUE="1.0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEASURES_TO_PRESERVE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEASURES_TO_PRESERVE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_RASTER_NODATA_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PointCloudCombiner"/>
+#! <XFORM_PARM PARM_NAME="ATTRS_TO_PRESERVE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_TO_PRESERVE" PARM_VALUE="color_red,UInt8,color_green,UInt8,color_blue,UInt8"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="-34.5006 -127.003"
+#! BOUNDING_RECT="-34.5006 -127.003 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_red" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_blue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="color_green" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="pos" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="color_red" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="color_blue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="color_green" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST $(pc) = No"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
@@ -422,9 +501,36 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="8"
-#! SOURCE_NODE="2"
+#! IDENTIFIER="9"
+#! SOURCE_NODE="6"
 #! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="10"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="8"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -444,6 +550,8 @@
 GUI IGNORE SourceDataset_SQLITE3_1,SQLITE3_IN_EXPOSE_ATTRS_GROUP_SQLITE3_1,SQLITE3_IN_NETWORK_AUTHENTICATION_SQLITE3_1,SQLITE3_IN_NETWORK_PROXY_SQLITE3_1
 DEFAULT_MACRO sqlite C:\bin\minetest-0.4.10-win64\worlds\Small\map.sqlite
 GUI MULTIFILE sqlite SQLite_Database_Files(*.sl3;*.db;*.sqlite)|*.sl3;*.db;*.sqlite|SQLite_Database_Files(*.sl3)|*.sl3|SQLite_Database_Files(*.db)|*.db|SQLite_Database_Files(*.sqlite)|*.sqlite|All_files(*.*)|*.* Source SQLite Database File(s):
+DEFAULT_MACRO pc Yes
+GUI CHOICE pc Yes%No Read as PointCloud:
 INCLUDE PYTHON
 def ParamFunc():
   import re,fme,os
@@ -468,10 +576,16 @@ def ParamFunc():
               player_y = int(float(res.group(2))/10.0)/16
               player_z = int(float(res.group(3))/10.0)/16
               blocks = []
-              for i in xrange(player_x-1,player_x+1):
-                  for j in xrange(player_z-1,player_z+1):
-                      for k in xrange(player_y,player_y+2):
-                          blocks.append(str(getBlockAsInteger([i,k,j])))
+              if FME_MacroValues['pc'] == "No":
+                  for i in xrange(player_x-1,player_x+1):
+                      for j in xrange(player_z-1,player_z+1):
+                          for k in xrange(player_y,player_y+2):
+                              blocks.append(str(getBlockAsInteger([i,k,j])))
+              else:
+                  for i in xrange(player_x-6,player_x+6):
+                      for j in xrange(player_z-6,player_z+6):
+                          for k in xrange(player_y-2,player_y+2):
+                              blocks.append(str(getBlockAsInteger([i,k,j])))
               a = "pos in (%s)" % ",".join(blocks)
               return a
   
@@ -484,6 +598,7 @@ else:
   return { macroName : str(value) }
 END_INCLUDE
 INCLUDE [ if {{$(sqlite)} == {}} { puts_real {Parameter 'sqlite' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(pc)} == {}} { puts_real {Parameter 'pc' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE SQLITE3
@@ -573,6 +688,13 @@ FACTORY_DEF * PythonFactory    FACTORY_NAME PythonCaller    INPUT  FEATURE_TYPE 
 
 # -------------------------------------------------------------------------
 
+FACTORY_DEF * TestFactory    FACTORY_NAME Tester    INPUT  FEATURE_TYPE PythonCaller_OUTPUT    TEST @EvaluateExpression(STRING_ENCODED,$(pc$encode),Tester) = No ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE Tester_PASSED    OUTPUT FAILED FEATURE_TYPE Tester_FAILED
+# -------------------------------------------------------------------------
+FACTORY_DEF * VectorToPointCloudFactory    FACTORY_NAME PointCloudCombiner___VectorMerger    INPUT  FEATURE_TYPE Tester_FAILED    ACCUMULATE_ATTRIBUTES yes    EXTRACT_RASTER_NODATA no    SPACING "1.0"    MEASURES_TO_PRESERVE    ATTRIBUTES_TO_PRESERVE color_red,UInt8,color_green,UInt8,color_blue,UInt8    OUTPUT COERCED FEATURE_TYPE PointCloudCombiner___MergedVectorFeatures__       @SupplyAttributes(?,fme_basename,PointCloudCombiner)
+FACTORY_DEF * PointCloudCombinerFactory    FACTORY_NAME PointCloudCombiner___Combiner    INPUT FEATURE_TYPE PointCloudCombiner___MergedVectorFeatures__    ACCUMULATE_ATTRIBUTES yes    OUTPUT MERGED FEATURE_TYPE PointCloudCombiner_OUTPUT
+
+# -------------------------------------------------------------------------
+
 # Set the directive to add all the meta-attributes to the features.
 # We do this so users see all possible information in the viewed
 # features.
@@ -580,41 +702,41 @@ FACTORY_DEF * PythonFactory    FACTORY_NAME PythonCaller    INPUT  FEATURE_TYPE 
 READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
 # Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
 DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {PythonCaller_3_Output} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {Map} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
 # Make the temporary directory that the FFS files will live in.
-FACTORY_DEF * CreationFactory      FACTORY_NAME PythonCaller_3_Output_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
-FACTORY_DEF * TeeFactory    FACTORY_NAME PythonCaller_3_Output_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+FACTORY_DEF * CreationFactory      FACTORY_NAME Map_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME Map_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
 # Send raster, point cloud and vector features down different paths to prepare
 # them for viewing
 
-FACTORY_DEF * TestFactory    FACTORY_NAME PythonCaller_3_Output_FeatureDirector    INPUT  FEATURE_TYPE PythonCaller_OUTPUT    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE PythonCaller_3_Output___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE PythonCaller_3_Output___RasterFeatures___
-FACTORY_DEF * TestFactory    FACTORY_NAME PythonCaller_3_Output___FeatureDirector1    INPUT FEATURE_TYPE PythonCaller_3_Output___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE PythonCaller_3_Output___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE PythonCaller_3_Output___PointCloudFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME Map_FeatureDirector    INPUT  FEATURE_TYPE Tester_PASSED    INPUT  FEATURE_TYPE PointCloudCombiner_OUTPUT    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE Map___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE Map___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME Map___FeatureDirector1    INPUT FEATURE_TYPE Map___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE Map___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE Map___PointCloudFeatures___
 # Vector features simply may get their colors overridden
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME PythonCaller_3_Output_VectorSetterUpper    INPUT FEATURE_TYPE PythonCaller_3_Output___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+FACTORY_DEF * TeeFactory    FACTORY_NAME Map_VectorSetterUpper    INPUT FEATURE_TYPE Map___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
 # Point Cloud Features Might Need to be thinned
 
 # Note that we don't call the ThinPointCloud function directly, but rather
 # do it through TCL. This should allow this transformer to be used with a
 # Desktop license, even though ThinPointCloud requires Professional.
 
-Tcl2 proc PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME PythonCaller_3_Output___PointCloudThinner    INPUT FEATURE_TYPE PythonCaller_3_Output___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_thinPointCloud")
-Tcl2 proc PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME PythonCaller_3_Output_RasterSetterUpper    INPUT FEATURE_TYPE PythonCaller_3_Output___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+Tcl2 proc Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Map___PointCloudThinner    INPUT FEATURE_TYPE Map___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_thinPointCloud")
+Tcl2 proc Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Map_RasterSetterUpper    INPUT FEATURE_TYPE Map___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
 # Now route all the features into the recorder, changing their
 # feature type to the transformer name so that they view nicely
-# PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_VIS_FEAT_TYPE changes the feature types
+# Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_VIS_FEAT_TYPE changes the feature types
 # of the features being visualized.
 
-DEFAULT_MACRO PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_VIS_FEAT_TYPE PythonCaller_3_Output$(CATMAC)
+DEFAULT_MACRO Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_VIS_FEAT_TYPE Map$(CATMAC)
 DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
 DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
 # [PR#45549] The Data Inspector will limit the maximum number of features
 # it reads on WIN32, so we will correspondingly limit the number of
 # features we record here using the MAX_FEATURES_TO_RECORD directive.
 
-FACTORY_DEF * RecorderFactory    FACTORY_NAME PythonCaller_3_Output_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(PythonCaller_3_Output_cde1d501_ffb8_4c8a_a05b_e22606a2445d5_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA pos,varchar<openparen>255<closeparen>,data,varchar<openparen>255<closeparen>,content,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+FACTORY_DEF * RecorderFactory    FACTORY_NAME Map_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(Map_cde1d501_ffb8_4c8a_a05b_e22606a2445d38_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA pos,varchar<openparen>255<closeparen>,data,varchar<openparen>255<closeparen>,content,varchar<openparen>255<closeparen>,color_red,varchar<openparen>255<closeparen>,color_blue,varchar<openparen>255<closeparen>,color_green,varchar<openparen>255<closeparen>,fme_basename,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
 
 # -------------------------------------------------------------------------
 

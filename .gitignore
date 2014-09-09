@@ -1,0 +1,9 @@
+Minetest4FME/.project
+Minetest4FME/.pydevproject
+Minetest4FME/*.pyc
+Minetest4FME/*.log
+Minetest4FME/*.recover
+Minetest4FME/.settings/org.eclipse.core.resources.prefs
+Minetest4FME/colors.txt
+Minetest4FME/map.png
+Minetest4FME/minetestmapper.py
